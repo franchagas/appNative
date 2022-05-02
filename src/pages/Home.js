@@ -1,18 +1,23 @@
-import React from "react"; 
+import React, { useContext } from "react"; 
 import { View, Text, StyleSheet, Button } from "react-native";
-import  Logo  from '../components/Logo';
+import  Logo  from "../components/Logo";
+import Teste from "../components/Teste";
+import { Provider , Context} from "../context/dataContext";
 
 
 const Home = (props) => {
+
+  const data = useContext(Context);
   return (
     <View style={styles.view}>
          <Logo/>
-        <Text style={styles.text}>Home</Text>
+         <Text>{data}</Text>
+        <Text style={styles.text}>Home inicio com data</Text>
+    
         <Button title="Sobre" 
         style={styles.button}
         onPress={() => props.navigation.navigate("Sobre")}
         />
-
   
         <Button title="Contato" 
          style={styles.buton}
@@ -28,6 +33,11 @@ const Home = (props) => {
         <Button title="Formulario" 
          style={styles.buton}
         onPress={() => props.navigation.navigate("Formulario")}
+        />
+
+        <Button title="Login" 
+         style={styles.buton}
+        onPress={() => props.navigation.navigate("SingIn")}
         />
 
 

@@ -8,7 +8,10 @@ import  Sobre  from './src/pages/Sobre';
 import  Home  from './src/pages/Home';
 import  Contador  from './src/pages/Contador';
 import  Formulario  from './src/pages/Formulario';
+import  SingIn  from './src/pages/SingIn';
 import  Input  from './src/components/Input';
+import { Provider } from "./src/context/dataContext";
+
 
 const Stack = createStackNavigator();
 
@@ -33,6 +36,7 @@ const App = () => {
        <Stack.Screen name="Sobre" component={Sobre} />
        <Stack.Screen name="Contato" component={Contato} />
        <Stack.Screen name="Contador" component={Contador} />
+       <Stack.Screen name="SingIn" component={SingIn} />
        <Stack.Screen name="Input" component={Input} />
        <Stack.Screen name="Formulario" component={Formulario} />
       </Stack.Navigator>
@@ -41,5 +45,11 @@ const App = () => {
 
 };
 
+export default () =>{
+return(
+  <Provider>
+    <App/>
+  </Provider>
+);
 
-export default App;
+}; 
