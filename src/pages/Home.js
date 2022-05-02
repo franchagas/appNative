@@ -25,6 +25,12 @@ const Home = (props) => {
         />
 
 
+        <Button title="Formulario" 
+         style={styles.buton}
+        onPress={() => props.navigation.navigate("Formulario")}
+        />
+
+
     </View>
   );
 
